@@ -1,10 +1,10 @@
-from node import *
+from LinkedList.node import Node
+
 
 class LinkedList:
     def __init__(self, data):
         self.head = Node(data)
 
-    
     def add(self, data):
         if self.head is None:
             self.head = Node(data)
@@ -17,20 +17,18 @@ class LinkedList:
 
         current.next = Node(data)
 
-
-    def insertAfter(self, after, data):
+    def insert_after(self, after, data):
         current = self.head
-        
+
         while current.next is not None:
             if current.data == after:
-                newNode = Node(data)
-                newNode.next = current.next
-                current.next = newNode
+                new_node = Node(data)
+                new_node.next = current.next
+                current.next = new_node
                 return
             current = current.next
 
         raise Exception("Node not found")
-
 
     def remove(self, data):
         if self.head.data == data:
@@ -42,18 +40,16 @@ class LinkedList:
         while current.next is not None:
             if current.next.data == data:
                 current.next = current.next.next
-                
+
             current = current.next
 
-    
-    def replaceHead(self, data):
+    def replace_head(self, data):
         node = Node(data)
         node.next = self.head
         self.head = node
 
-    
-    def printList(self):
+    def print_list(self):
         current = self.head
         while current is not None:
-            print("{} ->".format(current.data), end = ' ')
+            print("{} ->".format(current.data), end=' ')
             current = current.next

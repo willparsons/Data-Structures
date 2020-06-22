@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -14,5 +15,3 @@ class Node:
 
     def __gt__(self, other: Node):
         return self.data > other.data
-
-    

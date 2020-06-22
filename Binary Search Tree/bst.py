@@ -3,21 +3,17 @@ from node import Node
 
 
 class BST:
-    def __init__(self, root):
+    def __init__(self, root: any):
         if isinstance(root, Node):
             self.root = root
         else:
             self.root = Node(root)
-            
 
     def insert(self, data, start=None):
-        if start is None:
-            start = self.root
-
         node = Node(data)
 
         if start is None:
-            start = node
+            self.root = node
             return
 
         # left
@@ -25,19 +21,16 @@ class BST:
             if start.left is None:
                 start.left = node
             else:
-                insert(data, start.left)
+                self.insert(data, start.left)
 
         # right
         if node > start:
             if start.right is None:
                 start.right = node
             else:
-                insert(data, start.right)
+                self.insert(data, start.right)
 
-        
-
-
-    def preOrder(self, start: Node=None):
+    def pre_order(self, start: Node = None):
         if start is None:
             start = self.root
             print("Pre order:", end=' ')
@@ -45,21 +38,20 @@ class BST:
         print(f"{start.data},", end=' ')
 
         if start.left is not None:
-            self.preOrder(start.left)
-        
+            self.pre_order(start.left)
+
         if start.right is not None:
-            self.preOrder(start.right)
+            self.pre_order(start.right)
 
-
-    def inOrder(self, start: Node=None):
+    def in_order(self, start: Node = None):
         if start is None:
             start = self.root
             print("In order:", end=' ')
 
         if start.left is not None:
-            self.inOrder(start.left)
+            self.in_order(start.left)
 
         print(f"{start.data},", end=' ')
 
         if start.right is not None:
-            self.inOrder(start.right)
+            self.in_order(start.right)
