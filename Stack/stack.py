@@ -1,4 +1,4 @@
-from node import Node
+from Stack.node import Node
 from typing import List
 
 

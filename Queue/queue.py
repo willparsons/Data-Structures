@@ -1,4 +1,4 @@
-from node import Node
+from Queue.node import Node
 from typing import List
 
 

@@ -1,5 +1,5 @@
 from __future__ import annotations
-from node import Node
+from BST.node import Node
 
 
 class BST:

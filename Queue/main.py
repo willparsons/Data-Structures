@@ -1,4 +1,4 @@
-from queue import Queue
+from Queue.queue import Queue
 
 if __name__ == '__main__':
     q = Queue()

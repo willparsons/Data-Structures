@@ -1,4 +1,4 @@
-from bst import BST
+from BST.bst import BST
 
 if __name__ == "__main__":
     tree = BST(10)
